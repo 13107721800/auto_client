@@ -1,4 +1,9 @@
 # 用户自定义配置
+import os
+
+
+BASEDIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+print(BASEDIR)
 
 USER = 'root'
 PWD = 1

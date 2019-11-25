@@ -1,3 +1,4 @@
+from lib.config.settings import settings
 
 
 class Base(object):
@@ -6,7 +7,7 @@ class Base(object):
         if self.mode == 'agent':
             import subprocess
             res = subprocess.getoutput(cmd)
-            ipinfo = res[10:20]
+            ipinfo = res
             print(ipinfo)
         elif self.mode == 'ssh':
             import paramiko

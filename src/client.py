@@ -16,7 +16,8 @@ class Agent(Base):
     # 采集信息
     def collect(self):
         res = PluginsManager().execute()
-        hostname = res['basic']['data']['hostname']
+        # hostname = res['basic']['data']['hostname']
+        hostname = res
         # self.postData(res)
         # print(res)
         ret = open(os.path.join(settings.BASEDIR, 'conf/cert'), 'r', encoding='utf-8').read()
@@ -24,7 +25,8 @@ class Agent(Base):
             with open(os.path.join(settings.BASEDIR, 'conf/cert'), 'w', encoding='utf-8') as f:
                 f.write(hostname)
         else:
-            res['basic']['data']['hostname'] = ret
+            # res['basic']['data']['hostname'] = ret
+            res = ret
         for key, val in res.items():
             print(key, val)
 

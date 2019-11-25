@@ -6,7 +6,7 @@ from .base import Base
 class Basic(object):
 
     def process(self, command_func):
-        res = command_func('dir')
+        res = command_func('uname')
         self.parse(res)
 
     def parse(self, res):

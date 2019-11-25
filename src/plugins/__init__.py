@@ -62,7 +62,7 @@ class PluginsManager(object):
     def cmd_agent(self, cmd):
         import subprocess
         res = subprocess.getoutput(cmd)
-        ipinfo = res[10:20]
+        ipinfo = res
         #print(ipinfo)
 
     def cmd_ssh(self, cmd):
